@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.alyyousuf.rolle.MainActivity" >
+    
+    <item
+        android:id="@+id/action_bluetooth"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+		android:icon="@drawable/bluetooth_connect"
+        android:title="@string/action_bluetooth"/>
+
+</menu>

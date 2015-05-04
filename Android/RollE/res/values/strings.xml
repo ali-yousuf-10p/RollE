@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RollE</string>
+    <string name="title_section1">3D Visual</string>
+    <string name="title_section2">PID Control</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_bluetooth">Bluetooth</string>
+    <string name="kalman_filter">Kalman Filter</string>
+    <string name="complementary_filter">Complementary Filter</string>
+    <string name="unfiltered">Unfiltered</string>
+    <string name="zeropid">Zero PID</string>
+
+</resources>

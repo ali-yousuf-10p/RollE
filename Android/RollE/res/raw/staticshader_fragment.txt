@@ -1,0 +1,33 @@
+precision mediump float;       // Set the default precision to medium. We don't need as high of a
+                               // precision in the fragment shader.
+uniform vec3 u_Light1Pos;       // The position of the light in eye space.
+uniform vec3 u_Light2Pos;       // The position of the light in eye space.
+ 
+varying vec3 v_Position;       // Interpolated position for this fragment.
+varying vec4 v_Color;          // This is the color from the vertex shader interpolated across the
+                               // triangle per fragment.
+varying vec3 v_Normal;         // Interpolated normal for this fragment.
+ 
+// The entry point for our fragment shader.
+void main()
+{
+    // Will be used for attenuation.
+    float distance1 = length(u_Light1Pos - v_Position);
+    float distance2 = length(u_Light2Pos - v_Position);
+ 
+    // Get a lighting direction vector from the light to the vertex.
+    vec3 light1Vector = normalize(u_Light1Pos - v_Position);
+    vec3 light2Vector = normalize(u_Light2Pos - v_Position);
+ 
+    // Calculate the dot product of the light vector and vertex normal. If the normal and light vector are
+    // pointing in the same direction then it will get max illumination.
+    float diffuse1 = max(dot(v_Normal, light1Vector), 0.1);
+    float diffuse2 = max(dot(v_Normal, light2Vector), 0.1);
+ 
+    // Add attenuation.
+    diffuse1 = diffuse1 * (1.0 / (1.0 + (0.03 * distance1 * distance1)));
+    diffuse2 = diffuse2 * (1.0 / (1.0 + (0.03 * distance2 * distance2)));
+ 
+    // Multiply the color by the diffuse illumination level to get final output color.
+    gl_FragColor = v_Color * min((diffuse1+diffuse2), 0.9);
+}

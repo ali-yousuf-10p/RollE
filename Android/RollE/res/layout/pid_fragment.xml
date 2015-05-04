@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:columnCount="2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.alyyousuf.rolle.MainActivity$PlaceholderFragment" >
+
+    <EditText
+        android:id="@+id/pText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+    </EditText>
+
+   <EditText
+       android:id="@+id/iText"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/pText"
+       android:layout_alignRight="@+id/pText"
+       android:layout_below="@+id/pText"
+       android:layout_marginTop="30dp"
+       android:ems="10"
+       android:inputType="numberDecimal" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/dText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iText"
+        android:layout_alignRight="@+id/iText"
+        android:layout_below="@+id/iText"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pText"
+        android:layout_alignBottom="@+id/pText"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/pText"
+        android:text="Proportional" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/iText"
+        android:layout_alignBottom="@+id/iText"
+        android:layout_alignRight="@+id/textView1"
+        android:text="Integral" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dText"
+        android:layout_alignBottom="@+id/dText"
+        android:layout_alignRight="@+id/textView2"
+        android:text="Derivative" />
+
+    <Button
+        android:id="@+id/setBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dText"
+        android:layout_centerHorizontal="true"
+        android:text="Set PID" />
+
+    <Button
+        android:id="@+id/zeroPIDbtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/setBtn"
+        android:layout_below="@+id/setBtn"
+        android:text="@string/zeropid" />
+
+</RelativeLayout>
